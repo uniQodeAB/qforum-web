@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Start";
+}
+
+<div>
+    <h1>
+        <span class="first">Q</span><span class="second">Forum</span>
+    </h1>
+    <div class="logos">
+        <strong><i>by</i></strong>
+        <br />
+        <br />
+        <img src="~/images/qsthlm.png" />
+    </div>
+    <div class="description">
+        <h2>
+            Vad är det för något?
+        </h2>
+        <p>
+            Lorem ipsum dolor sit amet, ei ius minim quando, in mei doctus pertinacia necessitatibus. Cum integre adipisci cu, possit mollis eirmod vim eu, modus discere antiopam mel ei. Quo utinam placerat invenire eu. Ut sit dolore feugiat splendide. Has no dolores perpetua, mei eu eligendi tacimates invenire, no usu accumsan albucius. Nec ei nonumes scriptorem.
+        </p>
+        <p>
+            Vix id tamquam pertinax patrioque. Sed te vivendum principes inciderint, an dolorem insolens definiebas mei, ipsum iudicabit ei ius. Et nam elitr voluptatum, munere periculis temporibus per et, sale soluta utamur eu per. Singulis theophrastus nam ne, modo consul pri at, case minimum phaedrum eum et. In paulo alterum nominavi nam. Novum delicata ad sea, duo partem facilis luptatum et, eu nisl mutat sit.
+        </p>
+    </div>
+    <div class="next-date">
+        <h2>
+            Nästa tillfälle är @ViewData["NextDateReadable"]!
+        </h2>
+        Maten kommer denna gång ifrån <strong>@ViewData["RestaurantName"]</strong> och menyn kan ni hitta <strong><a href="@ViewData["RestaurantMenuUrl"]" target="_blank">här</a></strong>.
+    </div>
+    <div class="register">
+        <h2>
+            Hur anmäler jag mig?!
+        </h2>
+        <p>
+            Enkelt! Genom att fylla i fälten nedan och klicka på <strong>OK</strong>.
+        </p>
+        <br/>
+        <form>
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="Namn">
+            </div>
+            <div class="input-group input-group-lg">
+                <input type="email" class="form-control" placeholder="E-mail">
+            </div>
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="Mat (välj ifrån länken ovan)">
+            </div>
+            <div class="action-group pull-right">
+                <button type="button" class="btn btn-success">OK</button>
+            </div>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+</div>
