@@ -113,9 +113,8 @@ namespace QForum.Web.Controllers
             {
                 throw;
             }
-
-
-            return Json(new {Echo = model });
+            
+            return Ok();
         }
 
         [HttpGet]
