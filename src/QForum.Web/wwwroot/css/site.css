@@ -80,28 +80,66 @@ textarea {
 .form-control {
     max-width: 100%;
 }
-.action-group button {
+.action-group input {
     width: 100px;
     height: 46px;
 }
 
 /* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) {
+@media only screen and (max-width : 320px) {
+    body {
+        padding: 0
+    }
     h1 {
         font-size: 3.5em;
+    }
+    h2 {
+        margin: 0 auto 15px auto;
+    }
+    footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .container {
+        padding: 0;
     }
     .logos img {
         max-width: 280px;
     }
+    .info-container {
+        padding: 20px;
+    }
+    .info-container:last-child {
+        margin-bottom: 0; 
+    }
 }
 
 /* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
+@media only screen and (max-width : 480px) {
+    body {
+        padding: 0
+    }
     h1 {
         font-size: 4em;
     }
+    h2 {
+        margin: 0 auto 15px auto;
+    }
+    footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .container {
+        padding: 0;
+    }
+    .info-container {
+        padding: 20px;
+    }
     .logos img {
         max-width: 320px;
+    }
+    .info-container:last-child {
+        margin-bottom: 0; 
     }
 }
 
