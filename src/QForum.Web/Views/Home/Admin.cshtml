@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+}
+
+<div class="info-container">
+    <form id="adminForm">
+        <div class="input-group input-group-lg required">
+            <span class="input-group-addon" id="required-date">*</span>
+            <input type="text" name="eventDate" class="form-control" placeholder="Datum" aria-describedby="required-date">
+        </div>
+        <div class="input-group input-group-lg required">
+            <span class="input-group-addon" id="required-restaurantName">*</span>
+            <input type="text" name="restaurantName" class="form-control" placeholder="Namn på restaurangen" aria-describedby="required-restaurantName">
+        </div>
+        <div class="input-group input-group-lg required">
+            <span class="input-group-addon" id="required-restaurantMenuUrl">*</span>
+            <input type="text" name="restaurantMenuUrl" class="form-control" placeholder="Url till meny" aria-describedby="required-restaurantMenuUrl">
+        </div>
+        <div class="action-group pull-right">
+            <input type="submit" class="btn btn-primary" value="OK"/>
+        </div>
+        <div class="clearfix"></div>
+    </form>
+</div>

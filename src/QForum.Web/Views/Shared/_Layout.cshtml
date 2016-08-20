@@ -7,29 +7,42 @@
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/toastr/toastr.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"/>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+              asp-fallback-href="~/lib/toastr/toastr.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true"/>
     </environment>
     <link rel="icon" href="~/images/cropped-favicon-32x32.png" sizes="32x32" />
 </head>
 <body>
-    <div class="container body-content">
-        @RenderBody()
-        <br/>
-        <hr />
-        <footer>
-            <p>&copy; 2016 - qforum.se</p>
-        </footer>
+<div class="container body-content">
+    <h1>
+        <span class="first">Q</span><span class="second">Forum</span>
+    </h1>
+    <div class="logos">
+        <strong><i>by</i></strong>
+        <br />
+        <br />
+        <img src="~/images/qsthlm.png" />
     </div>
+    @RenderBody()
+    <br/>
+    <footer>
+        <p>&copy; 2016 - qforum.se</p>
+    </footer>
+</div>
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/toastr/toastr.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
@@ -40,6 +53,10 @@
         <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+                asp-fallback-src="~/lib/toastr/toastr.min.js"
+                asp-fallback-test="window.toastr">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>

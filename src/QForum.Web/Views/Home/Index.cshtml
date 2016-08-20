@@ -1,56 +1,71 @@
 ﻿@{
     ViewData["Title"] = "Start";
 }
+<div class="info-container">
+    <h2>
+        Vad är det?
+    </h2>
+    <h3>Diskussion</h3>
+    <p>
+        Vi träffas och diskuterar lite olika saker. Du har kanske något på ditt uppdrag som du behöver höra andras åsikter om? Eller varför inte prata om de senaste gadgets som har kommit ut? Ska man köpa en VR eller inte? Det kan vara vad som helst från teknik till politik, himmel till jord!
+    </p>
+    <h3>Kodning och arkitektur</h3>
+    <p>
+        Du kanske har ett hobbyprojekt och vill få lite feedback från kollegor på <strong>QSthlm</strong>? Eller kanske har något problem på uppdraget som du behöver hjälp med. Ta med koden så hackar vi loss, kör par-programmering och kodgranskning!
+    </p>
+    <h3>Umgänge</h3>
+    <p>
+        Vi äter äter en matbit, dricker något till det, och har allmänt trevligt tillsammans! Du får givetvis även bjuda med dig en kompis eller någon från uppdraget.
+    </p>
+</div>
+<div class="info-container">
+    <h2>
+        När är det?
+    </h2>
+    @if ((bool)ViewData["HasUpcomingEvent"])
+    {
+        <p>
+            Nästa tillfälle är <strong>@ViewData["NextDateReadable"]</strong>. Maten kommer denna gång ifrån <strong>@ViewData["RestaurantName"]</strong> och menyn kan ni hitta <strong><a href="@ViewData["RestaurantMenuUrl"]" target="_blank"> här </a></strong>.
+        </p>
+    }
+    else
+    {
+        <p>
+            För närvarande är nästa tillfälle inte bestämt.
+        </p>
+    }
+</div>
 
-<div>
-    <h1>
-        <span class="first">Q</span><span class="second">Forum</span>
-    </h1>
-    <div class="logos">
-        <strong><i>by</i></strong>
-        <br />
-        <br />
-        <img src="~/images/qsthlm.png" />
-    </div>
-    <div class="description">
-        <h2>
-            Vad är det för något?
-        </h2>
-        <p>
-            Lorem ipsum dolor sit amet, ei ius minim quando, in mei doctus pertinacia necessitatibus. Cum integre adipisci cu, possit mollis eirmod vim eu, modus discere antiopam mel ei. Quo utinam placerat invenire eu. Ut sit dolore feugiat splendide. Has no dolores perpetua, mei eu eligendi tacimates invenire, no usu accumsan albucius. Nec ei nonumes scriptorem.
-        </p>
-        <p>
-            Vix id tamquam pertinax patrioque. Sed te vivendum principes inciderint, an dolorem insolens definiebas mei, ipsum iudicabit ei ius. Et nam elitr voluptatum, munere periculis temporibus per et, sale soluta utamur eu per. Singulis theophrastus nam ne, modo consul pri at, case minimum phaedrum eum et. In paulo alterum nominavi nam. Novum delicata ad sea, duo partem facilis luptatum et, eu nisl mutat sit.
-        </p>
-    </div>
-    <div class="next-date">
-        <h2>
-            Nästa tillfälle är @ViewData["NextDateReadable"]!
-        </h2>
-        Maten kommer denna gång ifrån <strong>@ViewData["RestaurantName"]</strong> och menyn kan ni hitta <strong><a href="@ViewData["RestaurantMenuUrl"]" target="_blank">här</a></strong>.
-    </div>
-    <div class="register">
+@if ((bool)ViewData["HasUpcomingEvent"])
+{
+    <div class="info-container">
         <h2>
             Hur anmäler jag mig?!
         </h2>
         <p>
-            Enkelt! Genom att fylla i fälten nedan och klicka på <strong>OK</strong>.
+            Enkelt! Genom att fylla i fälten nedan och klicka på <strong>OK</strong> senast 2 timmar innan det startar.
         </p>
         <br/>
-        <form>
-            <div class="input-group input-group-lg">
-                <input type="text" class="form-control" placeholder="Namn">
+        <form id="registerForm">
+            <div class="input-group input-group-lg required">
+                <span class="input-group-addon" id="required-name">*</span>
+                <input type="text" name="name" class="form-control" placeholder="Namn" aria-describedby="required-name">
+            </div>
+            <div class="input-group input-group-lg required">
+                <span class="input-group-addon" id="required-email">*</span>
+                <input type="email" name="email" class="form-control" placeholder="E-mail" aria-describedby="required-email">
+            </div>
+            <div class="input-group input-group-lg required">
+                <span class="input-group-addon" id="required-food">*</span>
+                <input type="text" name="food" class="form-control" placeholder="Mat (välj ifrån länken ovan)" aria-describedby="required-email">
             </div>
             <div class="input-group input-group-lg">
-                <input type="email" class="form-control" placeholder="E-mail">
-            </div>
-            <div class="input-group input-group-lg">
-                <input type="text" class="form-control" placeholder="Mat (välj ifrån länken ovan)">
+                <textarea name="other" class="form-control" placeholder="Övrigt"></textarea>
             </div>
             <div class="action-group pull-right">
-                <button type="button" class="btn btn-success">OK</button>
+                <input type="submit" class="btn btn-primary" value="OK"/>
             </div>
             <div class="clearfix"></div>
         </form>
     </div>
-</div>
+}
